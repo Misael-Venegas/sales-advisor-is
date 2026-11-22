@@ -1,0 +1,494 @@
+/* ==========================================================================
+   MARCOLIN MÉXICO - TARJETA DE PRESENTACIÓN DIGITAL DE LUJO
+   Mobile-First, Responsive & High-Performance
+   ========================================================================== */
+
+:root {
+  /* Paleta Cromática Oro & Champagne */
+  --gold-highlight: #fff2d1;
+  --gold-light: #f3d489;
+  --gold-main: #d4af37;
+  --gold-mid: #b8912e;
+  --gold-dark: #816017;
+  --gold-gradient: linear-gradient(135deg, #fce5a7 0%, #e2be68 35%, #fff0cc 55%, #c49a37 80%, #99731f 100%);
+  --gold-text-gradient: linear-gradient(180deg, #fff3d6 0%, #f1ce7c 40%, #c59b38 85%, #8f6c1e 100%);
+  --gold-border-gradient: linear-gradient(135deg, rgba(243, 212, 137, 0.7) 0%, rgba(129, 96, 23, 0.4) 50%, rgba(243, 212, 137, 0.7) 100%);
+
+  /* Paleta Verde Esmeralda & Sedas */
+  --emerald-darkest: #01140e;
+  --emerald-dark: #022318;
+  --emerald-main: #054832;
+  --emerald-light: #0b7352;
+  --emerald-glow: rgba(11, 115, 82, 0.45);
+  --emerald-btn-gradient: linear-gradient(135deg, #013322 0%, #064d36 45%, #0a6547 70%, #022e1f 100%);
+
+  /* Fondos y Sombras */
+  --bg-page: #020403;
+  --bg-card: #040705;
+  --bg-button: rgba(9, 14, 11, 0.85);
+  --text-muted: #d0c8b8;
+  --text-white: #ffffff;
+
+  /* Tipografías */
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Transiciones y Radios */
+  --radius-btn: 14px;
+  --radius-pill: 9999px;
+  --transition-smooth: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset y Normalización */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--bg-page);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--bg-page);
+  background-image: 
+    radial-gradient(ellipse at 50% 10%, rgba(5, 72, 50, 0.22) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 90%, rgba(4, 35, 24, 0.3) 0%, transparent 70%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   LAYOUT RESPONSIVO
+   En móvil: Ancho completo fluido.
+   En tablet/desktop: Tarjeta de lujo centrada (max-width: 480px).
+   ========================================================================== */
+
+.page-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+@media (min-width: 600px) {
+  .page-wrapper {
+    padding: 30px 16px 50px;
+  }
+}
+
+.card-container {
+  width: 100%;
+  max-width: 460px;
+  background-color: var(--bg-card);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
+}
+
+@media (min-width: 600px) {
+  .card-container {
+    border-radius: 28px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 
+      0 15px 50px rgba(0, 0, 0, 0.9),
+      0 0 35px rgba(5, 72, 50, 0.2),
+      inset 0 0 1px rgba(255, 242, 209, 0.2);
+  }
+}
+
+/* ==========================================================================
+   1. HERO SECTION (Logotipo y Lentes Marcolin)
+   ========================================================================== */
+
+.hero-section {
+  width: 100%;
+  position: relative;
+  line-height: 0;
+  user-select: none;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   2. PROFILE SECTION (Nombre y Cargo)
+   ========================================================================== */
+
+.profile-section {
+  text-align: center;
+  padding: 10px 24px 22px;
+  position: relative;
+  z-index: 2;
+}
+
+.advisor-name {
+  font-family: var(--font-sans);
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  background: var(--gold-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.25));
+}
+
+.advisor-role {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #dfbf75;
+  margin-bottom: 16px;
+}
+
+.advisor-bio {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #e2ddd4;
+  font-weight: 300;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   3. BOTÓN PRINCIPAL: WHATSAPP
+   ========================================================================== */
+
+.primary-cta-section {
+  padding: 0 20px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-primary-whatsapp {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background: var(--emerald-btn-gradient);
+  border: 1.2px solid var(--gold-main);
+  border-radius: var(--radius-pill);
+  padding: 12px 18px;
+  gap: 14px;
+  box-shadow: 
+    0 4px 22px rgba(2, 46, 31, 0.7),
+    0 0 16px rgba(212, 175, 55, 0.28),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.btn-primary-whatsapp:hover,
+.btn-primary-whatsapp:focus-visible {
+  transform: translateY(-2px) scale(1.01);
+  border-color: var(--gold-highlight);
+  box-shadow: 
+    0 6px 28px rgba(11, 115, 82, 0.55),
+    0 0 22px rgba(243, 212, 137, 0.45),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary-whatsapp:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.btn-whatsapp-icon-box {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.icon-whatsapp {
+  width: 32px;
+  height: 32px;
+  stroke: #ffffff;
+  fill: rgba(255, 255, 255, 0.15);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+.btn-whatsapp-divider {
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+  flex-shrink: 0;
+}
+
+.btn-whatsapp-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.btn-whatsapp-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-whatsapp-subtitle {
+  font-size: 0.75rem;
+  color: #c9e9d6;
+  font-weight: 300;
+  margin-top: 1px;
+}
+
+.btn-whatsapp-arrow {
+  width: 20px;
+  height: 20px;
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary-whatsapp:hover .btn-whatsapp-arrow {
+  transform: translateX(3px);
+  color: var(--gold-highlight);
+}
+
+/* ==========================================================================
+   4. RETÍCULA DE ACCIONES SECUNDARIAS (2x2)
+   ========================================================================== */
+
+.actions-grid-section {
+  padding: 0 20px 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg-button);
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  border-radius: var(--radius-btn);
+  text-decoration: none;
+  color: var(--gold-light);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  font-family: inherit;
+  width: 100%;
+}
+
+.action-btn:hover,
+.action-btn:focus-visible {
+  border-color: var(--gold-main);
+  background: rgba(18, 28, 22, 0.88);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.6),
+    0 0 12px rgba(212, 175, 55, 0.25);
+  color: var(--gold-highlight);
+}
+
+.action-btn:active {
+  transform: scale(0.97);
+}
+
+.action-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-main);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.action-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.action-btn:hover .action-icon {
+  transform: scale(1.1);
+  color: var(--gold-highlight);
+}
+
+.action-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-align: left;
+  line-height: 1.25;
+  color: #dfc27e;
+  text-transform: uppercase;
+}
+
+.action-btn:hover .action-text {
+  color: var(--gold-highlight);
+}
+
+/* ==========================================================================
+   5. FOOTER CORPORATIVO
+   ========================================================================== */
+
+.footer-section {
+  text-align: center;
+  padding-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-divider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 24px;
+  margin-bottom: 8px;
+}
+
+.footer-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+}
+
+.footer-brand {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  color: #d1b162;
+  text-transform: uppercase;
+}
+
+.footer-address {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #c0b9aa;
+  margin-bottom: 6px;
+  padding: 0 20px;
+}
+
+.footer-pin-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--gold-main);
+  flex-shrink: 0;
+}
+
+.footer-tagline {
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #a48231;
+  margin-bottom: 4px;
+}
+
+.footer-wave-container {
+  width: 100%;
+  line-height: 0;
+  margin-top: -6px;
+}
+
+.footer-wave-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   6. FEEDBACK TOAST NOTIFICATION
+   ========================================================================== */
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(10, 20, 15, 0.95);
+  color: var(--gold-light);
+  border: 1px solid var(--gold-main);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 175, 55, 0.3);
+  backdrop-filter: blur(12px);
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.35s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  white-space: nowrap;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   AJUSTES PARA PANTALLAS EXTRA PEQUEÑAS (< 360px)
+   ========================================================================== */
+
+@media (max-width: 359px) {
+  .advisor-name {
+    font-size: 1.55rem;
+    letter-spacing: 2px;
+  }
+  .advisor-role {
+    font-size: 1.1rem;
+  }
+  .btn-whatsapp-title {
+    font-size: 0.82rem;
+  }
+  .action-text {
+    font-size: 0.68rem;
+  }
+}

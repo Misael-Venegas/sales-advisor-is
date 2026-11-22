@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:García;Isaías;;;
+FN:Isaías García
+ORG:Marcolin México
+TITLE:Sales Advisor
+TEL;TYPE=CELL,VOICE;VALUE=uri:tel:+525611331198
+EMAIL;TYPE=WORK,INTERNET:isaias.garcia@marcolin.com
+ADR;TYPE=WORK:;;Campos Elíseos 403;Polanco;CDMX;;México
+NOTE:Tu contacto comercial en Marcolin México. Diseño · Innovación · Calidad · Confianza.
+URL:https://marcolin.com
+END:VCARD
