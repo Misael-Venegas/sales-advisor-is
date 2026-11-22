@@ -21,7 +21,7 @@ const ADVISOR_CONFIG = {
   whatsappGreeting: "Hola Isaías, escaneé tu tarjeta de presentación digital de Marcolin México. Me gustaría ponerme en contacto contigo.",
 
   // Correo Electrónico
-  email: "isaias.garcia@marcolin.com",
+  email: "igarcia@marcolin.com",
   emailSubject: "Contacto Comercial - Marcolin México",
   emailBody: "Hola Isaías,\n\nTe contacto a través de tu tarjeta de presentación digital de Marcolin México.\n\nSaludos cordiales.",
 
@@ -48,6 +48,7 @@ function setupDynamicLinks() {
   const whatsappBtn = document.getElementById("whatsappBtn");
   const emailBtn = document.getElementById("emailBtn");
   const mapsBtn = document.getElementById("mapsBtn");
+  const saveContactBtn = document.getElementById("saveContactBtn");
 
   if (whatsappBtn) {
     const encodedMsg = encodeURIComponent(ADVISOR_CONFIG.whatsappGreeting);
@@ -63,23 +64,20 @@ function setupDynamicLinks() {
   if (mapsBtn) {
     mapsBtn.href = ADVISOR_CONFIG.googleMapsUrl;
   }
+
+  // Abre el marcador telefónico nativo con el número ya escrito
+  if (saveContactBtn) {
+    saveContactBtn.href = `tel:+${ADVISOR_CONFIG.whatsappNumber}`;
+  }
 }
 
 /**
- * Configura los botones de "Guardar Contacto" y "Compartir mi contacto"
+ * Configura las acciones interactivas (Compartir contacto)
  */
 function setupContactActions() {
-  const saveContactBtn = document.getElementById("saveContactBtn");
   const shareBtn = document.getElementById("shareBtn");
 
-  // 1. Guardar Contacto (Genera y descarga la vCard automáticamente)
-  if (saveContactBtn) {
-    saveContactBtn.addEventListener("click", () => {
-      downloadVCard();
-    });
-  }
-
-  // 2. Compartir Contacto (Usa API Nativa en móvil o Copia link en Desktop)
+  // Compartir Contacto (Usa API Nativa en móvil o Copia link en Desktop)
   if (shareBtn) {
     shareBtn.addEventListener("click", async () => {
       await handleShareContact();
